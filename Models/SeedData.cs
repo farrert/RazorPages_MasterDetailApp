@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using FrisbeeGolfCourseMap.Data;
-using System;
-using System.Linq;
+
 
 namespace FrisbeeGolfCourseMap.Models
 {
