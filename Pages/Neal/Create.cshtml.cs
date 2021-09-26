@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using FrisbeeGolfCourseMap.Data;
 using FrisbeeGolfCourseMap.Models;
 
-namespace FrisbeeGolfCourseMap.Pages.Tom
+namespace FrisbeeGolfCourseMap.Pages.Neal
 {
     public class CreateModel : PageModel
     {

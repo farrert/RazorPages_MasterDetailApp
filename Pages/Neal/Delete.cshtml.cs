@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using FrisbeeGolfCourseMap.Data;
 using FrisbeeGolfCourseMap.Models;
 
-namespace FrisbeeGolfCourseMap.Pages.Tom
+namespace FrisbeeGolfCourseMap.Pages.Neal
 {
     public class DeleteModel : PageModel
     {

@@ -4,17 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FrisbeeGolfCourseMap.Data;
 using FrisbeeGolfCourseMap.Models;
 
-namespace FrisbeeGolfCourseMap.Pages.Tom
+namespace FrisbeeGolfCourseMap.Pages.Neal
 {
-    public class DeleteModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly FrisbeeGolfCourseMap.Data.FrisbeeGolfCourseMapContext _context;
 
-        public DeleteModel(FrisbeeGolfCourseMap.Data.FrisbeeGolfCourseMapContext context)
+        public EditModel(FrisbeeGolfCourseMap.Data.FrisbeeGolfCourseMapContext context)
         {
             _context = context;
         }
@@ -38,22 +39,39 @@ namespace FrisbeeGolfCourseMap.Pages.Tom
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (id == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Page();
             }
 
-            Course = await _context.Course.FindAsync(id);
+            _context.Attach(Course).State = EntityState.Modified;
 
-            if (Course != null)
+            try
             {
-                _context.Course.Remove(Course);
                 await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CourseExists(Course.ID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
             return RedirectToPage("./Index");
+        }
+
+        private bool CourseExists(int id)
+        {
+            return _context.Course.Any(e => e.ID == id);
         }
     }
 }
