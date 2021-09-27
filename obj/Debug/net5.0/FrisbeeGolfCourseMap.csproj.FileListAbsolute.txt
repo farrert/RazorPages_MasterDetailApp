@@ -1316,3 +1316,8 @@ C:\Users\Shane\Desktop\CIT 255\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net
 C:\Users\Shane\Desktop\CIT 255\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\ref\FrisbeeGolfCourseMap.dll
 C:\Users\Shane\Desktop\CIT 255\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\FrisbeeGolfCourseMap.pdb
 C:\Users\Shane\Desktop\CIT 255\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\FrisbeeGolfCourseMap.genruntimeconfig.cache
+C:\Users\Shane\Desktop\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\Razor\Pages\Neal\Create.cshtml.g.cs
+C:\Users\Shane\Desktop\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\Razor\Pages\Neal\Delete.cshtml.g.cs
+C:\Users\Shane\Desktop\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\Razor\Pages\Neal\Details.cshtml.g.cs
+C:\Users\Shane\Desktop\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\Razor\Pages\Neal\Edit.cshtml.g.cs
+C:\Users\Shane\Desktop\Sprint 2\RazorPages_MasterDetailApp\obj\Debug\net5.0\Razor\Pages\Neal\Index.cshtml.g.cs
