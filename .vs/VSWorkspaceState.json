@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Models",
     "\\Pages",
-    "\\Pages\\Neal"
+    "\\Pages\\Neal",
+    "\\Pages\\Shared"
   ],
-  "SelectedNode": "\\FrisbeeGolfCourseMap.sln",
+  "SelectedNode": "\\Pages\\Neal\\Details.cshtml",
   "PreviewInSolutionExplorer": false
 }
