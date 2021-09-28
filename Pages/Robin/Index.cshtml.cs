@@ -22,20 +22,19 @@ namespace FrisbeeGolfCourseMap.Pages.Robin
 
         public IList<Course> Course { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string SearchString { get; set; } 
+        public string SearchString { get; set; }
         public SelectList Times { get; set; }
-        [BindProperty(SupportsGet = true)]
-        public int CourseTime { get; set; }
+        //[BindProperty(SupportsGet = true)]
+        //public int CourseTime { get; set; }
         public string TimeSort { get; set; }
+        public string NameSort { get; set; }
 
 
         public async Task OnGetAsync(string sortOrder)
         {
-            TimeSort = sortOrder;
-            // Use LINQ to get list of genres.
-            //IQueryable<int> TimetoCompleteQuery = from c in _context.Course
-                                            //orderby c.TimeToComplete
-                                           // select c.TimeToComplete;
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "NameDesc" : "";
+            TimeSort = sortOrder == "TimeAsc" ? "TimeDesc" : "TimeAsc";
+
             var courses = from c in _context.Course
                           select c;
 
@@ -44,21 +43,24 @@ namespace FrisbeeGolfCourseMap.Pages.Robin
                 courses = courses.Where(s => s.Name.Contains(SearchString));
             }
 
-            if (TimeSort == "desc")
+            switch (sortOrder)
             {
-                courses = courses.OrderByDescending(c => c.TimeToComplete);
-            }
-            else
-            {
-                courses = courses.OrderBy(c => c.TimeToComplete);
+                case "NameDesc":
+                    courses = courses.OrderByDescending(c => c.Name);
+                    break;
+                case "TimeDesc":
+                    courses = courses.OrderByDescending(c => c.TimeToComplete);
+                    break;
+                case "TimeAsc":
+                    courses = courses.OrderBy(c => c.TimeToComplete);
+                    break;
+                default:
+                    courses = courses.OrderBy(c => c.Name);
+                    break;
             }
 
-           // if (!int.IsNullorEmpty(CourseTime))
-           // {
-               // courses = courses.Where(x => x.TimeToComplete == CourseTime);
-            //}
-             Course = await courses.ToListAsync();
-            // Times = new SelectList(await TimetoCompleteQuery.Distinct().ToListAsync());
+            Course = await courses.ToListAsync();
+
         }
     }
 }

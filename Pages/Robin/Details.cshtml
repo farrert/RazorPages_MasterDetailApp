@@ -5,63 +5,64 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Alias)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Alias)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Location)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Location)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Difficulty)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Difficulty)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.NumberOfHoles)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.NumberOfHoles)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.TimeToComplete)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.TimeToComplete)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.ThrowTotal)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.ThrowTotal)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Description)
-        </dd>
-    </dl>
-</div>
+<Table>
+
+    <tr style="background-color:darksalmon; border: 30px 30px 30px 30px black; padding:15px 15px 15px 15px;">Course Details</tr>
+
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.Name)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.Name)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.Alias)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.Alias)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.Location)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.Location)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.Difficulty)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.Difficulty)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.NumberOfHoles)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.NumberOfHoles)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.TimeToComplete)
+    </Tr>
+    <tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.TimeToComplete)
+    </tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.ThrowTotal)
+    </Tr>
+    <Tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.ThrowTotal)
+    </Tr>
+    <Tr class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Course.Description)
+    </Tr>
+    <tr class="col-sm-10">
+        @Html.DisplayFor(model => model.Course.Description)
+    </tr>
+    
+</Table>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Course.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
+
+
